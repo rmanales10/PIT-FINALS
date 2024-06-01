@@ -35,7 +35,7 @@
     </div>
 </nav>
 <!-- Header-->
-<section>dasdasd
+<section>
     <div class="header">
         <div>
             <div class="img">
