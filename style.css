@@ -4,9 +4,9 @@
     --main:#C19A6B;
     --sub:#967969;
     --white:#fefefc;
-    --box_shadow: 20px 20px 10px -20px
+    --box_shadow: 20px 20px 20px -20px
     rgba(7, 7, 7, 0.6),
-    inset 30px 30px 30px -30px rgb(0, 0, 0,);
+    inset 30px 30px 30px -30px rgb(0, 0, 0);
     --font_family: "Cormorant Garamond", serif;
 }
 
@@ -20,16 +20,90 @@
     background: var(--main);
     color: var(--white) !important;
 }
+html::-webkit-scrollbar {
+    width: 10px;
+}
+html::-webkit-scrollbar-track{
+    background-color: #333;
+}
+html::-webkit-scrollbar-thumb{
+    background: var(--main);
+}
+.btn{
+    padding: 8px 25px;
+    border: 1px solid var(--main);
+    color: var(--main) !important;
+    font-weight: bold;
+    outline: none;
+    border-radius: 15px;
+    position: relative;
+    transition: 0.3s;
+    z-index: 1;
+}
 
+.btn:hover{
+    color: var(--white) !important;
+}
+
+.btn::after {
+    content: "";
+    background: var(--main) !important;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0px;
+    display: block;
+    z-index: -1;
+    position: absolute;
+    border-radius: 15px;
+    transition: 0.2s;  
+}
+
+.btn:hover::after{
+    width: 100%;
+}
+
+.content{
+    text-align: center;
+    margin: 80px auto;
+}
+
+.content h6{
+    font-weight: 600;
+    font-family: var(--font_family);
+    font-size: 4em;
+}
+
+.content h6::after{
+    content: "";
+    background: var(--main);
+    height: 3px;
+    width: 585px;
+    display: block;
+    position: absolute;
+    margin-left: 350px;
+}
+
+.content h6 span{
+    font-size: 1.5em;
+    color: var(--main) !important;
+    font-weight: 900;
+}
 .navbar {
     padding: 20px;
     display: flex;
     justify-content: space-between;
+    transition: 0.3s;
+}
+
+.navbar.scroll{
+    padding: 5px;
+    background:var(--main) !important;
+
 }
 .logo-img {
-    max-height: 100px; 
+    max-height: 80px; 
     margin-right: 5px; 
-    position: fixed;
     z-index: -5;
 }
 .navbar-brand{
@@ -44,7 +118,7 @@
 .navbar-brand span{
     font-weight: 900;
     font-size: 1.6em;
-    color: var(--main) !important;
+    color: black;
 }
 .navbar-nav{
     padding: 0px 100px;
@@ -73,10 +147,21 @@
     position: relative;
 }
 .header img{
-    height: 90vh;
+    height: 95vh;
     width: 100%;
     object-fit: cover;
 }
+
+.bgtext{
+    font-family: var(--font_family);
+    font-size: larger;
+}
+
+.bgtext h1{
+    font-size: 2.5em;
+    margin: 0 0 0 25px;
+}
+
 .header .Overlay{
     position: absolute;
     top: 0;
@@ -85,6 +170,33 @@
     width: 100%;
     background: black;
     opacity: 0.5;
-    
 }
 
+/* Adapt */
+.adapt{
+    margin: 100px auto;
+}
+.adapt .box{
+    box-shadow: var(--box_shadow);
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.adapt .box h5{
+    font-weight: bold;
+    font-family: var(--font_family);
+    margin: 10px auto;
+}
+
+.adapt .btn{
+    width: 70%;
+}
+
+.adapt .row{
+    margin: 100px auto  ;
+}
+
+.adapt .mid{
+    margin-top: 100px;
+}
