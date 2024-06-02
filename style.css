@@ -158,7 +158,7 @@ html::-webkit-scrollbar-thumb{
 }
 
 .bgtext h1{
-    font-size: 2.5em;
+    font-size: 2em;
     margin: 0 0 25px 25px;
 }
 
@@ -171,6 +171,12 @@ html::-webkit-scrollbar-thumb{
     background: black;
     opacity: 0.5;
 }
+
+
+
+
+
+
 .about{
     background: #CFB28A;
     height: 100vh;
@@ -264,9 +270,48 @@ html::-webkit-scrollbar-thumb{
     margin-inline: 20vh;
     border-radius: 2px;
     border: #CFB28A;
+    font-family: var(--font_family) !important;
 }
 .shel1{
     display: flex;
     flex-direction: column;
     
+}
+.btn1 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #CFB28A;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-left: 13vh;
+}
+
+.btn2 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #CFB28A;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-left: 13vh;
+    animation: zoom 2s infinite;
+}
+
+@keyframes zoom {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.4);
+    }
+}
+
+.adapon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
 }
