@@ -1,0 +1,29 @@
+#container.active .form-signin {
+    transform: translateX(-100%);
+}
+
+#container.active .form-signup {
+    transform: translateX(0);
+}
+
+#container .form-signup,
+#container .form-signin {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    transition: transform 0.4s ease-in-out;
+}
+.signup {
+    transform: translateX(100%);
+}
+
+.login, .signup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
