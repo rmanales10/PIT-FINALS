@@ -201,7 +201,7 @@ html::-webkit-scrollbar-thumb{
     font-size: 1.5em;
     font-family: var(--font_family);
 }
-.abstxt h1{
+.abtxt h1{
     position: absolute;
     margin-top: -20%;
     margin-right: 20%;
