@@ -231,4 +231,24 @@
 <p id="message" class="text-sm"></p>
 </div>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      showTab('tab1');
+    });
+
+    function fetchPendingPets() {
+      fetch('get_pending_pets.php')
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            displayPendingPets(data.pets);
+          } else {
+            displayMessage('Error fetching pending pets: ' + data.message, 'error');
+          }
+        })
+        .catch(error => {
+          displayMessage('Error fetching pending pets: ' + error.message, 'error');
+        });
+    }
+
            
