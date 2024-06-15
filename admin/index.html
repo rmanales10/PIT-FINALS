@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="retro">
 
 <head>
   <meta charset="UTF-8">
@@ -82,7 +82,7 @@
                 id="route4">
                 <i class="fa-solid fa-chalkboard"></i>Learnings
               </button>
-            </li>
+            </li> 
           </ul>
         </div>
       </div>
@@ -94,10 +94,11 @@
             <path
               d="M12 1a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2a1 1 0 0 1 1-1h8zm-2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
           </svg>
-        </button> <span class="font-bold text-sm ml-2">Logout</span>
+        </button> <a href="../logout" class="font-bold text-sm ml-2">Logout</a>
       </div>
     </div>
   </aside>
+
   <main class="hide ml-60 pt-16 max-h-screen overflow-auto hidden" id="tab1">
     <div class="px-6 py-8">
       <div class="max-w-4xl mx-auto">
@@ -106,136 +107,7 @@
             enjoying a variety of pets, tailored to fit different lifestyles and preferences.</h1>
           <div class="flex items-center justify-between">
             <div class="flex items-stretch">
-              <div class="text-gray-400 text-xs">Members<br>connected</div>
+              <div class="text-gray-400 text-xs">Members<br>connected</div><
+              </body>
 
-  
-  <main class="hide ml-60 pt-16 max-h-screen overflow-auto hidden" id="tab2">
-    <div class="px-6 py-8">
-      <div class="max-w-4xl mx-auto">
-        <div class="bg-white rounded-3xl mb-5">
-          <h1 class="text-3xl font-bold mb-10">All Pets</h1>
-          <div class="p-96" id="pending-pets-container"></div>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <div id="message-container" class="fixed top-5 right-5 p-4 border-l-4 hidden">
-    <p id="message" class="text-sm"></p>
-  </div>
-
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      showTab('tab1');
-    });
-
-    function fetchPendingPets() {
-      fetch('get_pending_pets.php')
-        .then(response => response.json())
-        .then(data => {
-          if (data.success) {
-            displayPendingPets(data.pets);
-          } else {
-            displayMessage('Error fetching pending pets: ' + data.message, 'error');
-          }
-        })
-        .catch(error => {
-          displayMessage('Error fetching pending pets: ' + error.message, 'error');
-        });
-    }
-
-    function displayPendingPets(pets) {
-      const container = document.getElementById('pending-pets-container');
-      container.innerHTML = '';
-
-      if (pets.length === 0) {
-        container.innerHTML = '<p>No pending pets found.</p>';
-        return;
-      }
-
-      pets.forEach(pet => {
-        const petCard = document.createElement('div');
-        petCard.classList.add('bg-gray-100', 'rounded-lg', 'p-4', 'mb-4');
-        petCard.innerHTML = `
-      <h2 class="text-2xl font-bold mb-2">${pet.pet_name}</h2>
-      <p><strong>Breed:</strong> ${pet.breed}</p>
-      <p><strong>Age:</strong> ${pet.age}</p>
-      <p><strong>Gender:</strong> ${pet.gender}</p>
-      <p><strong>Weight:</strong> ${pet.weight}</p>
-      <p><strong>Color:</strong> ${pet.color}</p>
-      <p><strong>Personality:</strong> ${pet.personality}</p>
-      <p><strong>Status:</strong> ${pet.status}</p>
-      <img src="data:image/jpeg;base64,${pet.pet_picture}" alt="${pet.pet_name}" class="w-32 h-32 object-cover rounded mt-4">
-    `;
-        container.appendChild(petCard);
-      });
-    }
-
-    function displayMessage(message, type) {
-      const messageContainer = document.getElementById('message-container');
-      const messageText = document.getElementById('message');
-
-      messageText.textContent = message;
-      messageContainer.className = `fixed top-5 right-5 p-4 border-l-4 ${type === 'success' ? 'bg-green-100 border-green-500 text-green-700' : 'bg-red-100 border-red-500 text-red-700'}`;
-      messageContainer.style.display = 'block';
-
-      setTimeout(() => {
-        messageContainer.style.display = 'none';
-      }, 3000);
-    }
-
-    function showTab(tabId) {
-      // Hide all tab content
-      const tabContents = document.querySelectorAll('.hide');
-      tabContents.forEach(tabContent => {
-        tabContent.classList.add('hidden');
-      });
-
-      // Show the selected tab content
-      const selectedTabContent = document.getElementById(tabId);
-      selectedTabContent.classList.remove('hidden');
-
-      // Fetch pending pets data if "All Pets" tab is selected
-      if (tabId === 'tab2') {
-        fetchPendingPets();
-      }
-    }
-    const routes = document.querySelectorAll('#route1, #route2, #route3, #route4');
-
-    routes.forEach(route => {
-      route.addEventListener('click', function () {
-        // Remove the class from all routes
-        routes.forEach(r => r.classList.remove('bg-yellow-200'));
-
-        // Add the class to the clicked route
-        this.classList.add('bg-yellow-200');
-      });
-    });
-
-  </script>
-
-
-  <script>
-    function showTab(tabId) {
-      // Hide all tab content
-      const tabContents = document.querySelectorAll('.hide');
-      tabContents.forEach(tabContent => {
-        tabContent.classList.add('hidden');
-
-      });
-
-      // Show the selected tab content
-      const selectedTabContent = document.getElementById(tabId);
-      selectedTabContent.classList.remove('hidden');
-    }
-    showTab('tab1')
-
-    
-
-  </script>
-
-
-</body>
-
-</html>
+           
