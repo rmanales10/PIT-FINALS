@@ -12,7 +12,7 @@ $name = $data['name'];
 $email = $data['email'];
 $address = $data['address'];
 $phone_number = $data['phone_number'];
- 
+  
 $sql = "INSERT INTO user (username, password, name, email, address, phone_number) VALUES (?, ?, ?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
 
