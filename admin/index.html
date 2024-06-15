@@ -332,6 +332,23 @@
       }
     }
 
+    const routes = document.querySelectorAll('#route1, #route2, #route3, #route4');
+
+    routes.forEach(route => {
+      route.addEventListener('click', function () {
+        // Remove the class from all routes
+        routes.forEach(r => r.classList.remove('bg-yellow-200'));
+
+        // Add the class to the clicked route
+        this.classList.add('bg-yellow-200');
+      });
+    });
+
+  </script>
+</body>
+
+</html>
+
 
 
            
