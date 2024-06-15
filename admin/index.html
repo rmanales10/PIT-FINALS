@@ -315,6 +315,23 @@
         messageContainer.style.display = 'none';
       }, 3000);
     }
+    function showTab(tabId) {
+      // Hide all tab content
+      const tabContents = document.querySelectorAll('.hide');
+      tabContents.forEach(tabContent => {
+        tabContent.classList.add('hidden');
+      });
+
+      // Show the selected tab content
+      const selectedTabContent = document.getElementById(tabId);
+      selectedTabContent.classList.remove('hidden');
+
+      // Fetch pending pets data if "All Pets" tab is selected
+      if (tabId === 'tab2') {
+        fetchPendingPets();
+      }
+    }
+
 
 
            
