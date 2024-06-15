@@ -251,4 +251,13 @@
         });
     }
 
+    function displayPendingPets(pets) {
+      const container = document.getElementById('pending-pets-container');
+      container.innerHTML = '';
+
+      if (pets.length === 0) {
+        container.innerHTML = '<p>No pending pets found.</p>';
+        return;
+      }
+
            
