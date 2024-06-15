@@ -260,4 +260,26 @@
         return;
       }
 
+      pets.forEach(pet => {
+        const petCard = document.createElement('div');
+        petCard.classList.add('bg-gray-100', 'rounded-lg', 'p-4', 'mb-4');
+        petCard.innerHTML = `
+          <h2 class="text-2xl font-bold mb-2">${pet.pet_name}</h2>
+          <p><strong>Breed:</strong> ${pet.breed}</p>
+          <p><strong>Age:</strong> ${pet.age}</p>
+          <p><strong>Gender:</strong> ${pet.gender}</p>
+          <p><strong>Weight:</strong> ${pet.weight}</p>
+          <p><strong>Color:</strong> ${pet.color}</p>
+          <p><strong>Personality:</strong> ${pet.personality}</p>
+          <p><strong>Status:</strong> ${pet.status}</p>
+          <img src="data:image/jpeg;base64,${pet.pet_pic}" alt="${pet.pet_name}" class="w-32 h-32 object-cover rounded mt-4">
+          <div class="flex justify-around mt-4">
+            <button class="bg-green-500 text-white px-4 py-2 rounded" onclick="updateRequestStatus(${pet.adopt_id}, 'approved')">Approve</button>
+            <button class="bg-red-500 text-white px-4 py-2 rounded" onclick="updateRequestStatus(${pet.adopt_id}, 'declined')">Decline</button>
+          </div>
+        `;
+        container.appendChild(petCard);
+      });
+    }
+
            
