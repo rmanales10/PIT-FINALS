@@ -1,3 +1,9 @@
+<?php 
+session_start();
+if(!isset($_SESSION['admin_id'])){
+header('location: ../logout');
+}
+?>
 <!DOCTYPE html>
 <html lang="en" data-theme="retro">
 
@@ -82,7 +88,7 @@
                 id="route4">
                 <i class="fa-solid fa-chalkboard"></i>Learnings
               </button>
-            </li> 
+            </li>
           </ul>
         </div>
       </div>
@@ -135,6 +141,7 @@
               </button>
             </div>
           </div>
+
           <hr class="my-10">
 
           <div class="grid grid-cols-2 gap-x-20">
@@ -145,38 +152,38 @@
                   <div class="p-4 bg-green-100 rounded-xl">
                     <div class="font-bold text-xl text-gray-800 leading-none">Adoption Area</div>
                     <div class="mt-5">
-                        <button type="button"
-                          class="inline-flex items-center justify-center py-2 px-3 rounded-xl bg-white text-gray-800 hover:text-green-500 text-sm font-semibold transition">
-                          Quick Access
-                        </button>
-                      </div>
+                      <button type="button"
+                        class="inline-flex items-center justify-center py-2 px-3 rounded-xl bg-white text-gray-800 hover:text-green-500 text-sm font-semibold transition">
+                        Quick Access
+                      </button>
                     </div>
+                  </div>
                 </div>
                 <div class="p-4 bg-yellow-100 rounded-xl text-gray-800">
                   <div class="font-bold text-2xl leading-none">20</div>
                   <div class="mt-2">Total Users</div>
                 </div>
                 <div class="p-4 bg-yellow-100 rounded-xl text-gray-800">
-                    <div class="font-bold text-2xl leading-none">23</div>
-                    <div class="mt-2">Total Pets</div>
+                  <div class="font-bold text-2xl leading-none">23</div>
+                  <div class="mt-2">Total Pets</div>
+                </div>
+                <div class="col-span-2">
+                  <div class="p-4 bg-purple-100 rounded-xl text-gray-800">
+                    <div class="font-bold text-xl leading-none">Total Adoptions</div>
+                    <div class="mt-2">685</div>
                   </div>
-                  <div class="col-span-2">
-                    <div class="p-4 bg-purple-100 rounded-xl text-gray-800">
-                      <div class="font-bold text-xl leading-none">Total Adoptions</div>
-                      <div class="mt-2">685</div>
-                    </div>
                 </div>
+              </div>
             </div>
-          </div>
-          <div>
-            <h2 class="text-2xl font-bold mb-4">Admin Panel</h2>
-            <div class="space-y-4">
-              <div class="p-4 bg-white border rounded-xl text-gray-800 space-y-2">
-                <div class="flex justify-between">
-                  <div class="text-gray-400 text-xs">Mommy Elsie</div>
-                  <div class="text-gray-400 text-xs">4h</div>
-                </div>
-                <a href="javascript:void(0)" class="font-bold hover:text-yellow-800 hover:underline">Blog and social
+            <div>
+              <h2 class="text-2xl font-bold mb-4">Admin Panel</h2>
+              <div class="space-y-4">
+                <div class="p-4 bg-white border rounded-xl text-gray-800 space-y-2">
+                  <div class="flex justify-between">
+                    <div class="text-gray-400 text-xs">Mommy Elsie</div>
+                    <div class="text-gray-400 text-xs">4h</div>
+                  </div>
+                  <a href="javascript:void(0)" class="font-bold hover:text-yellow-800 hover:underline">Blog and social
                     posts</a>
                   <div class="text-sm text-gray-600">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
@@ -201,14 +208,14 @@
                   </div>
                 </div>
                 <div class="p-4 bg-white border rounded-xl text-gray-800 space-y-2">
-                    <div class="flex justify-between">
-                      <div class="text-gray-400 text-xs">Pet App</div>
-                      <div class="text-gray-400 text-xs">2h</div>
-                    </div>
-                    <a href="javascript:void(0)" class="font-bold hover:text-yellow-800 hover:underline">Show tracking PET
-                      for ALL</a>
+                  <div class="flex justify-between">
+                    <div class="text-gray-400 text-xs">Pet App</div>
+                    <div class="text-gray-400 text-xs">2h</div>
                   </div>
+                  <a href="javascript:void(0)" class="font-bold hover:text-yellow-800 hover:underline">Show tracking PET
+                    for ALL</a>
                 </div>
+              </div>
             </div>
           </div>
         </div>
@@ -223,15 +230,15 @@
           <h1 class="text-3xl font-bold mb-10">All Pets</h1>
           <div class="p-4" id="pending-pets-container"></div>
         </div>
+      </div>
     </div>
-</div>
-</main>
+  </main>
 
-<div id="message-container" class="fixed top-5 right-5 p-4 border-l-4 hidden">
-<p id="message" class="text-sm"></p>
-</div>
+  <div id="message-container" class="fixed top-5 right-5 p-4 border-l-4 hidden">
+    <p id="message" class="text-sm"></p>
+  </div>
 
-<script>
+  <script>
     document.addEventListener('DOMContentLoaded', function () {
       showTab('tab1');
     });
@@ -281,6 +288,7 @@
         container.appendChild(petCard);
       });
     }
+
     function updateRequestStatus(adopt_id, status) {
       fetch('update_request_status.php', {
         method: 'POST',
@@ -315,6 +323,7 @@
         messageContainer.style.display = 'none';
       }, 3000);
     }
+
     function showTab(tabId) {
       // Hide all tab content
       const tabContents = document.querySelectorAll('.hide');
@@ -348,7 +357,3 @@
 </body>
 
 </html>
-
-
-
-           
