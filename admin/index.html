@@ -281,5 +281,27 @@
         container.appendChild(petCard);
       });
     }
+    function updateRequestStatus(adopt_id, status) {
+      fetch('update_request_status.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ adopt_id: adopt_id, status: status })
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            displayMessage(data.message, 'success');
+            fetchPendingPets(); // Refresh the list of pending pets
+          } else {
+            displayMessage(data.message, 'error');
+          }
+        })
+        .catch(error => {
+          displayMessage('Error updating request status: ' + error.message, 'error');
+        });
+    }
+
 
            
