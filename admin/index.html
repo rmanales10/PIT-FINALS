@@ -303,5 +303,18 @@
         });
     }
 
+    function displayMessage(message, type) {
+      const messageContainer = document.getElementById('message-container');
+      const messageText = document.getElementById('message');
+
+      messageText.textContent = message;
+      messageContainer.className = `fixed top-5 right-5 p-4 border-l-4 ${type === 'success' ? 'bg-green-100 border-green-500 text-green-700' : 'bg-red-100 border-red-500 text-red-700'}`;
+      messageContainer.style.display = 'block';
+
+      setTimeout(() => {
+        messageContainer.style.display = 'none';
+      }, 3000);
+    }
+
 
            
