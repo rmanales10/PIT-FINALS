@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <header class="bg-white shadow">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-gray-800">PetHouse</div>
+            <nav class="space-x-6">
+                <a href="#" class="text-gray-600 hover:text-blue-500">Home</a>
+                <a href="#" class="text-gray-600 hover:text-blue-500">About</a>
+                <a href="#" class="text-gray-600 hover:text-blue-500">Contact</a>
+                <a href="#" class="text-gray-600 hover:text-blue-500">Adoption</a>
+                <a href="#" class="text-gray-600 hover:text-blue-500">Location</a>
+                <a href="#" class="text-gray-600 hover:text-blue-500">FAQ</a>
+                <a href="#" class="text-gray-600 hover:text-blue-500">Sign In</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto mt-10 px-6">
+        <section class="text-center">
+            <h1 class="text-5xl font-bold text-gray-800">Not Only People Need A House</h1>
+            <p class="text-lg text-gray-600 mt-4">Find your new best friend today and give them a loving home.</p>
+            <div class="mt-8">
+                <img src="dog-image.jpg" alt="Dog" class="mx-auto w-1/2 rounded-lg shadow-lg">
+            </div>
+        </section>
+
+        <section class="mt-16">
+            <div class="flex justify-center space-x-4">
+                <button class="px-4 py-2 bg-blue-500 text-white rounded">All</button>
+                <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded">Dog</button>
+                <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded">Cat</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                <!-- Pet Cards Start Here -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="dog1.jpg" alt="Pet" class="w-full h-40 rounded-md object-cover">
+                    <h3 class="mt-4 text-xl font-semibold text-gray-800">Honey</h3>
+                    <p class="text-gray-600 mt-2">Learn More</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="cat1.jpg" alt="Pet" class="w-full h-40 rounded-md object-cover">
+                    <h3 class="mt-4 text-xl font-semibold text-gray-800">Aida</h3>
+                    <p class="text-gray-600 mt-2">Learn More</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="dog2.jpg" alt="Pet" class="w-full h-40 rounded-md object-cover">
+                    <h3 class="mt-4 text-xl font-semibold text-gray-800">Yio</h3>
+                    <p class="text-gray-600 mt-2">Learn More</p>
+                </div>
+                <!-- Add more pet cards as needed -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white shadow mt-16">
+        <div class="container mx-auto px-6 py-4 flex justify-between">
+            <div>
+                <h5 class="text-gray-800 font-bold">For Questions And Suggestions</h5>
+                <p class="text-gray-600">pet@gmail.com</p>
+                <p class="text-gray-600">@TwitterHandle</p>
+            </div>
+            <div>
+                <h5 class="text-gray-800 font-bold">Visit Now</h5>
+                <p class="text-gray-600">Street Name, Locality</p>
+                <p class="text-gray-600">City, State</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

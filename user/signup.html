@@ -1,94 +1,238 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="retro">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="login.css">
 
-    <title>Sign Up</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="login.css">
+  <script src="https://kit.fontawesome.com/ecd5e25db3.js" crossorigin="anonymous"></script>
+
+  <title>Sign Up</title>
 </head>
 <style>
-    /* CSS for fade-in transition */
-    body {
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
-    }
-  </style>
-   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      document.body.style.opacity = 1; // Initially set opacity to 1 to ensure the content is visible
-      
-      // Add event listener to all anchor tags
-      document.querySelectorAll("a").forEach(function(anchor) {
-        anchor.addEventListener("click", function(event) {
-          event.preventDefault(); // Prevent default link behavior
-          document.body.style.opacity = 0; // Fade out the body
-          setTimeout(function() {
-            window.location.href = anchor.href; // Navigate to the destination after fade-out
-          }, 500); // Adjust this value to match the transition duration
-        });
+  /* CSS for fade-in transition */
+  body {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.body.style.opacity = 1;
+    document.querySelectorAll("a").forEach(function (anchor) {
+      anchor.addEventListener("click", function (event) {
+        event.preventDefault();
+        document.body.style.opacity = 0;
+        setTimeout(function () {
+          window.location.href = anchor.href;
+        }, 500);
       });
     });
-  </script>
-<body class="font-serif bg-[#cfb28a]">
-    <div class="flex flex-row h-[100vh]" id="container">
-        <!-- Sign Up Form -->
-        <div class="bg-[#E8ECF1] w-1/2 flex flex-col justify-center items-center ">
-            <div class="w-4/5">
-                <h1 class="text-2xl">Sign up</h1>
-                <a href="#" class="btn bg-white w-full mt-5 rounded-3xl flex items-center justify-center gap-2">
-                    <svg width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20.9979 10.8484C20.9979 9.98542 20.9259 9.35542 20.7709 8.70142H10.7119V12.5984H16.6169C16.4979 13.5664 15.8549 15.0254 14.4259 16.0054L14.4059 16.1354L17.5869 18.5504L17.8069 18.5714C19.8309 16.7404 20.9979 14.0454 20.9979 10.8484Z" fill="#4285F4"/>
-                        <path d="M10.7111 21.1154C13.6041 21.1154 16.0322 20.1824 17.8062 18.5724L14.4251 16.0054C13.5201 16.6234 12.3061 17.0554 10.7111 17.0554C7.87812 17.0554 5.47315 15.2234 4.61615 12.6924L4.49011 12.7024L1.18311 15.2104L1.14014 15.3284C2.90114 18.7584 6.52012 21.1154 10.7111 21.1154Z" fill="#34A853"/>
-                        <path d="M4.61798 12.6926C4.39198 12.0386 4.26099 11.3386 4.26099 10.6156C4.26099 9.89257 4.39202 9.19257 4.60602 8.53857L4.60004 8.39957L1.25104 5.85156L1.14203 5.90256C0.416029 7.32556 -0.000976562 8.92357 -0.000976562 10.6156C-0.000976562 12.3076 0.416029 13.9056 1.14203 15.3286L4.61798 12.6926Z" fill="#FBBC05"/>
-                        <path d="M10.7111 4.17548C12.7231 4.17548 14.0801 5.02746 14.8541 5.73846L17.8781 2.84549C16.0211 1.15349 13.6041 0.115479 10.7111 0.115479C6.52112 0.115479 2.90114 2.47247 1.14014 5.90247L4.60413 8.53848C5.47313 6.00748 7.87812 4.17548 10.7111 4.17548Z" fill="#EB4335"/>
-                    </svg>
-                    Continue with Google
-                </a>
-                <div class="flex mt-5 gap-1 items-center">
-                    <span class="block w-full h-[1px] bg-gray-400"></span>
-                    <span class="text-gray-400 mx-2">OR</span>
-                    <span class="block w-full h-[1px] bg-gray-400"></span>
-                </div>
-                <div class="mt-5 gap-10">
-                    <p>User name or email address</p>
-                    <input type="text" name="username" id="username" class="indent-4 w-full h-12 bg-[#E8ECF1] border-solid border-[1px] rounded-xl border-gray-700">
-                    <p class="mt-4">Your password</p>
-                    <input type="password" name="password" id="password" class="indent-4 w-full h-12 bg-[#E8ECF1] border-solid border-[1px] rounded-xl border-gray-700">
-                </div>
-                <a href="#" class="block text-right underline mt-2">Forget your password</a>
-                <div class="flex flex-col mt-5">
-                    <a href="#" class="btn w-full rounded-full bg-[#cfb28a] text-white">Sign up</a>
-                    <a href="#" class="mt-2 text-center">Don’t have an account? <span class="underline">Sign up</span></a>
-                </div>
-            </div>
+  });
+
+  function submitForm() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirm_password').value;
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const address = document.getElementById('address').value;
+    const phoneNumber = document.getElementById('phone_number').value;
+
+    const errorMessage = document.getElementById('error-message');
+    const successMessage = document.getElementById('success-message');
+
+    errorMessage.textContent = '';
+    successMessage.textContent = '';
+
+    if (!username || !password || !confirmPassword || !name || !email || !address || !phoneNumber) {
+      errorMessage.textContent = 'All fields are required.';
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      errorMessage.textContent = 'Passwords do not match.';
+      return;
+    }
+
+    fetch('insert_user.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        username,
+        password,
+        name,
+        email,
+        address,
+        phone_number: phoneNumber
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        successMessage.textContent = 'User successfully registered.';
+      } else {
+        errorMessage.textContent = 'Error registering user: ' + data.message;
+      }
+    })
+    .catch(error => {
+      errorMessage.textContent = 'An error occurred: ' + error.message;
+    });
+  }
+</script>
+<body class="font-serif bg-[#cfb28a] rounded-3x1">
+  <div class="flex flex-row h-[100vh]" id="container">
+    <!-- Sign Up Form -->
+    <div class="bg-[#E8ECF1] w-1/2 flex flex-col justify-center items-center rounded-r-[10%] ">
+      <div class="w-4/5">
+        <h1 class="text-4xl"><b>Sign up</b></h1>
+        <div class="mt-5 gap-12">
+          <p>Username</p>
+          <input type="text" name="username" id="username" class="indent-4 w-full h-12 bg-[#E8ECF1] border-solid border-[1px] rounded-xl border-gray-700">
+          <p class="mt-4">Your password</p>
+          <div class="relative">
+            <input type="password" name="password" id="password" class="indent-4 w-full h-12 bg-[#E8ECF1] border-solid border-[1px] rounded-xl border-gray-700">
+            <button id="togglePassword" class="absolute top-1/2 transform -translate-y-1/2 right-3 focus:outline-none">
+              <i id="passwordIcon" class="fa-solid fa-eye-slash fa-fade w-10" style="color: #af8f6f; font-size: larger;"></i>
+            </button>
+          </div>
+          <p class="mt-4">Confirm password</p>
+          <div class="relative">
+            <input type="password" name="confirm_password" id="confirm_password" class="indent-4 w-full h-12 bg-[#E8ECF1] border-solid border-[1px] rounded-xl border-gray-700">
+            <button id="toggleConfirmPassword" class="absolute top-1/2 transform -translate-y-1/2 right-3 focus:outline-none">
+              <i id="confirmPasswordIcon" class="fa-solid fa-eye-slash fa-fade w-10" style="color: #af8f6f; font-size: larger;"></i>
+            </button>
+          </div>
+          <p class="mt-4">Name</p>
+          <input type="text" name="name" id="name" class="indent-4 w-full h-12 bg-[#E8ECF1] border-solid border-[1px] rounded-xl border-gray-700">
+          <p class="mt-4">Email Address</p>
+          <input type="text" name="email" id="email" class="indent-4 w-full h-12 bg-[#E8ECF1] border-solid border-[1px] rounded-xl border-gray-700">
+          <p class="mt-4">Address</p>
+          <input type="text" name="address" id="address" class="indent-4 w-full h-12 bg-[#E8ECF1] border-solid border-[1px] rounded-xl border-gray-700">
+          <p class="mt-4">Phone Number</p>
+          <input type="text" name="phone_number" id="phone_number" class="indent-4 w-full h-12 bg-[#E8ECF1] border-solid border-[1px] rounded-xl border-gray-700">
+          <button onclick="submitForm()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-xl">Submit</button>
+          <div id="error-message" class="text-red-500 mt-2"></div>
+          <div id="success-message" class="text-green-500 mt-2"></div>
         </div>
-        <!-- Promotional Panel -->
-        <div class="bg-[#cfb28a] w-1/2 flex flex-col justify-center items-center text-center rounded">
-            <h1 class="text-4xl">Not Only People <br> Need A House</h1>
-            <img src="../picture/login.png" alt="" width="500px" style="filter: drop-shadow(1px 1px 80px #3F2305) !important">
-            <p class="mt-5">To keep connected with us please sign in with your personal info</p>
-            <a href="login.html" class="btn  bg-[#E8ECF1] w-[150px] rounded-3xl mt-5">Sign in</a>
-        </div>
+      </div>
     </div>
-    
-    <script>
-        const container = document.getElementById("container");
-        const registerBtn = document.getElementById("register");
-    
 
-        registerBtn.addEventListener("click", () => {
-            container.classList.add("active");
-        });
 
-        loginBtn.addEventListener("click", () => {
-            container.classList.remove("active");
-        });
+    <!-- Promotional Panel -->
+    <div class="bg-[#cfb28a] w-1/2 flex flex-col justify-center items-center text-center">
+      <h1 class="text-4xl">Not Only People <br> Need A House</h1>
+      <img src="../picture/login.png" alt="" width="500px" style="filter: drop-shadow(1px 1px 80px #3F2305) !important">
+      <p class="mt-5">Discover your purr-fect companion – sign in now and give a furry friend their forever home</p>
+      <a href="login.html" class="btn  bg-[#E8ECF1] w-[150px] rounded-3xl mt-5">Sign in</a>
+    </div>
 
-    </script>
+  </div>
+
+  <script>
+
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('confirm_password');
+    const signupButton = document.querySelector('.btn');
+    const togglePasswordButton = document.getElementById('togglePassword');
+    const toggleConfirmPasswordButton = document.getElementById('toggleConfirmPassword');
+    const passwordIcon = document.getElementById('passwordIcon');
+    const confirmPasswordIcon = document.getElementById('confirmPasswordIcon');
+
+    function validateInputs() {
+      if (usernameInput.value.trim() && passwordInput.value.trim() && confirmPasswordInput.value.trim()) {
+        signupButton.disabled = false;
+        signupButton.classList.remove('cursor-not-allowed', 'opacity-50');
+      } else {
+        signupButton.disabled = true;
+        signupButton.classList.add('cursor-not-allowed', 'opacity-50');
+      }
+    }
+
+    function togglePasswordVisibility() {
+      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordInput.setAttribute('type', type);
+      if (type === 'password') {
+        passwordIcon.classList.remove('fa-eye-slash');
+        passwordIcon.classList.add('fa-eye');
+      } else {
+        passwordIcon.classList.remove('fa-eye');
+        passwordIcon.classList.add('fa-eye-slash');
+      }
+    }
+
+    function toggleConfirmPasswordVisibility() {
+      const type = confirmPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      confirmPasswordInput.setAttribute('type', type);
+      if (type === 'password') {
+        confirmPasswordIcon.classList.remove('fa-eye-slash');
+        confirmPasswordIcon.classList.add('fa-eye');
+      } else {
+        confirmPasswordIcon.classList.remove('fa-eye');
+        confirmPasswordIcon.classList.add('fa-eye-slash');
+      }
+    }
+
+    function redirectToLoginPage() {
+      if (!signupButton.disabled) {
+        window.location.href = '../user/login.html'; // Redirect to login page
+      }
+    }
+
+    usernameInput.addEventListener('input', validateInputs);
+    passwordInput.addEventListener('input', validateInputs);
+    confirmPasswordInput.addEventListener('input', validateInputs);
+
+    togglePasswordButton.addEventListener('click', togglePasswordVisibility);
+    toggleConfirmPasswordButton.addEventListener('click', toggleConfirmPasswordVisibility);
+
+    signupButton.addEventListener('click', redirectToLoginPage);
+
+
+
+
+
+    <!---------------------------------------------->
+
+
+
+
+
+    const container = document.getElementById("container");
+    const registerBtn = document.getElementById("register");
+
+
+    registerBtn.addEventListener("click", () => {
+      container.classList.add("active");
+    });
+
+    loginBtn.addEventListener("click", () => {
+      container.classList.remove("active");
+    });
+
+  </script>
+
+
+  <!-- database -->
+  <script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      if (!name || !email || !message) {
+        event.preventDefault();
+        alert('Please fill in all fields.');
+      }
+    });
+  </script> 
 
 
 </body>
+
 </html>
